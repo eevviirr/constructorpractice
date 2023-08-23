@@ -1,9 +1,11 @@
 import { SwiperSlide } from "swiper/react";
 import { Swiper } from "swiper/react";
 import vkLogo from "@/src/assets/icons/VK_logo.png";
-import { useState } from "react";
-
-const Social = () => {
+import { FC, useState } from "react";
+interface ISocialProps {
+    handleClick: () => void;
+}
+const Social: FC<ISocialProps> = ({ handleClick }) => {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
     return (
         <>
@@ -26,8 +28,11 @@ const Social = () => {
                         <SwiperSlide
                             key={i}
                             className={`text-white flex justify-center  transition-all duration-200 ${
-                                activeIndex === i ? "!scale-[1.2]" : "grayscale blur-sm"
+                                activeIndex === i
+                                    ? "!scale-[1.2]"
+                                    : "grayscale blur-sm pointer-events-none"
                             }`}
+                            onClick={handleClick}
                         >
                             <img src={vkLogo} alt="vklink" />
                         </SwiperSlide>

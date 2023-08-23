@@ -6,4 +6,6 @@ export interface IInputDefaultProps {
     handleChange?: (event: any) => void;
     disabled?: boolean;
     valueInp?: string;
-};
+    handelFocus?: (event: any) => void;
+    handelBlur?: (event: any) => void;
+}

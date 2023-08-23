@@ -17,7 +17,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<></>} />
                 <Route
-                    path="blanks"
+                    path="/constructorpractice/blanks"
                     element={
                         <Modal>
                             <PageBlanks />
@@ -25,7 +25,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="blanks/:id"
+                    path="/constructorpractice/blanks/:id"
                     element={
                         <Modal>
                             <PageBlanksItem />
@@ -33,7 +33,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="list"
+                    path="/constructorpractice/list"
                     element={
                         <Modal>
                             <PageProjects />
@@ -41,7 +41,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="list/edit/"
+                    path="/constructorpractice/list/edit/"
                     element={
                         <Modal>
                             <PageEdit />
@@ -49,7 +49,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="gallery/"
+                    path="/constructorpractice/gallery/"
                     element={
                         <Modal>
                             <PageGallery />
@@ -57,7 +57,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="background/"
+                    path="/constructorpractice/background/"
                     element={
                         <Modal>
                             <PageBackgroundEdit />
@@ -65,7 +65,7 @@ function App() {
                     }
                 />
                 <Route
-                    path="pallete/"
+                    path="/constructorpractice/pallete/"
                     element={
                         <Modal>
                             <PagePallete />
@@ -73,7 +73,7 @@ function App() {
                     }
                 />
                                 <Route
-                    path="profile/"
+                    path="/constructorpractice/profile/"
                     element={
                         <Modal>
                             <PageDefaultProfile />

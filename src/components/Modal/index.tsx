@@ -15,7 +15,7 @@ const Modal: FC<IModalProps> = ({ children }) => {
             ease: "power3.out", // Вид анимации
         });
         setTimeout(() => {
-            navigate("/");
+            navigate("/constructorpractice/");
         }, 1000);
     };
 

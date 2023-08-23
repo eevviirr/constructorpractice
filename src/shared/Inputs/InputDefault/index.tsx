@@ -9,6 +9,8 @@ const InputDefault: FC<IInputDefaultProps> = ({
     handleChange,
     disabled,
     valueInp,
+    handelFocus,
+    handelBlur
 }) => {
     const [value, setValue] = useState("");
 
@@ -31,6 +33,8 @@ const InputDefault: FC<IInputDefaultProps> = ({
                 placeholder={placeholder}
                 value={value || valueInp}
                 onChange={change}
+                onFocus={handelFocus}
+                onBlur={handelBlur}
             />
         </div>
     );
