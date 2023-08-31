@@ -17,7 +17,7 @@ function PagePallete() {
                     setChecked={() => setChecked((e) => !e)}
                 />
             </div>
-            <div className="flex items-center justify-center ml-[50px] ">
+            <div className="flex items-center justify-center ml-[50px] relative">
                 <CanvasColor />
                 <div className="Pallete-thumb "></div>
                 <div

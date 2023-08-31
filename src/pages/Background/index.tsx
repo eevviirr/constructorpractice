@@ -1,26 +1,29 @@
+import { useState } from "react";
 import { Filter } from "../../shared/Filter";
 import FormBlock from "../Edit/FormBlock";
 import Equalizer from "@/src/shared/Equalizer";
+import { PagePallete } from "@/src/shared/Pallete";
 
 const PageBackgroundEdit = () => {
+    const [index, setIndex] = useState<number>(0);
     return (
-        <>
+        <div className=" overflow-auto h-full">
             <div className="container pt-10">
                 <Filter
                     filterName={[
                         "Процедурный",
                         "Файл",
-                        "Градиент",
                         "Цвет",
                         "ИИ",
                     ]}
+                    setIndex={setIndex}
                 />
             </div>
-            <div className="w-full py-[60px] bg-slate-300 mt-1">
+            <div className="w-full py-[60px] bg-bg bg-cover mt-1 relative">
                 <div className="container">
                     <FormBlock />
                 </div>
-                
+
                 <div className="w-full left-0 mt-[30px] flex justify-center absolute cursor-pointer">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -39,13 +42,10 @@ const PageBackgroundEdit = () => {
                     </svg>
                 </div>
             </div>
-            <div className="w-full pt-[54px] pb-[37px] bg-[#292230]">
-                <div className="container">
-                    <Equalizer />
-                </div>
-                
-            </div>
-        </>
+            {index === 0 && <Equalizer />}
+            {index === 2 && <PagePallete />}
+            
+        </div>
     );
 };
 

@@ -1,12 +1,15 @@
-const Equalizer = () => {
-  return (
-    <div className="flex">
-        <input type="range" className="w-[138px] rotate-90" />
-        <input type="range" className="w-[138px] rotate-90" />
-        <input type="range" className="w-[138px] rotate-90" />
-        <input type="range" className="w-[138px] rotate-90" />
-    </div>
-  )
-}
+import { VSlider } from "../VSlider";
 
-export default Equalizer
+const Equalizer = () => {
+    return (
+        <div className="w-full pt-[54px] pb-[37px] bg-[#292230]">
+            <div className="container flex h-[140px] justify-between">
+                {[...new Array(6)].map((_) => {
+                    return <VSlider />;
+                })}
+            </div>
+        </div>
+    );
+};
+
+export default Equalizer;

@@ -13,3 +13,25 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 input {
     outline: none;
 }
+.Pallete-thumb {
+    box-sizing: border-box;
+    width: 66px;
+    height: 66px;
+    background: linear-gradient(to bottom right, #fff2f2, #7f8484);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-fill-mode: forwards;
+    border-radius: 50%;
+    position: absolute;
+}
+.Pallete-thumb::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 55px;
+    transform: rotate(180deg);
+    border-radius: 50%;
+    background: linear-gradient(to top left, #575959, #f8f8f8);
+    animation-fill-mode: forwards;
+}

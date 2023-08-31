@@ -1,14 +1,12 @@
 import { useState, useRef, MouseEvent, TouchEvent } from "react";
 
-
-function useLongPress(func:any) {
+function useLongPress(func: any) {
     type GenericMouseEvent = MouseEvent<HTMLElement, MouseEvent>;
-    
+
     const [action, setAction] = useState<string | undefined>("");
 
     const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>();
     const isLongPress = useRef<boolean | undefined>();
-
 
     function startPressTimer(e: GenericMouseEvent | TouchEvent<HTMLElement>) {
         isLongPress.current = false;
@@ -17,7 +15,7 @@ function useLongPress(func:any) {
             setAction("longpress");
             func(e);
             setAction(undefined);
-            clearInterval(timerRef.current)
+            clearInterval(timerRef.current);
         }, 300);
     }
 
@@ -60,7 +58,7 @@ function useLongPress(func:any) {
         onMouseDown: handleOnMouseDown,
         onMouseUp: handleOnMouseUp,
         onTouchStart: handleOnTouchStart,
-        onTouchEnd: handleOnTouchEnd
+        onTouchEnd: handleOnTouchEnd,
     };
 }
 export default useLongPress;

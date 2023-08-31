@@ -19,6 +19,10 @@ export default {
             animation: {
                 shake: "shake 0.2s infinite;",
             },
+            backgroundImage: {
+                'bg': "url('/src/assets/bg/bg.png')",
+
+            }
         },
         container: {
             center: true,

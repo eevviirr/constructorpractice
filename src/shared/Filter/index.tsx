@@ -1,7 +1,7 @@
 import { FC, useState, useRef, useEffect } from "react";
 import { IFilterProps } from "./FilterInterface";
 
-const Filter: FC<IFilterProps> = ({ filterName }) => {
+const Filter: FC<IFilterProps> = ({ filterName, setIndex }) => {
     const [activeName, setActiveName] = useState(filterName[0]);
     const [animate, setAnimate] = useState(false); // Добавлено новое состояние animate
     const activeRef = useRef<HTMLLIElement>(null);
@@ -20,7 +20,13 @@ const Filter: FC<IFilterProps> = ({ filterName }) => {
         setBorderLeft(left);
         setBorderWidth(width);
     };
-
+    const onHandleClick = (name:string, id:number) => {
+        setActiveName(name);
+        setAnimate(true); // Включаем анимацию при каждом клике
+        setTimeout(() => setAnimate(false), 150); // Отключаем анимацию через 300 мс
+        setIndex(id)
+        
+    }
     return (
         <div>
             <ul className="relative flex gap-4 pt-4 font-semibold">
@@ -33,9 +39,7 @@ const Filter: FC<IFilterProps> = ({ filterName }) => {
                         }
                         cursor-pointer text-[#8E8B8B] text-[15px]`}
                         onClick={() => {
-                            setActiveName(name);
-                            setAnimate(true); // Включаем анимацию при каждом клике
-                            setTimeout(() => setAnimate(false), 150); // Отключаем анимацию через 300 мс
+                            onHandleClick(name, id)
                         }}
                         key={id}
                     >

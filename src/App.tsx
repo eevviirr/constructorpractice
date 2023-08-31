@@ -9,6 +9,7 @@ import PageGallery from "./pages/Background/Gallery";
 import PageBackgroundEdit from "./pages/Background";
 import { PagePallete } from "./shared/Pallete";
 import { PageDefaultProfile } from "./pages/Profile";
+import { PageTextEdit } from "./pages/TextEdit";
 
 function App() {
     return (
@@ -72,11 +73,19 @@ function App() {
                         </Modal>
                     }
                 />
-                                <Route
+                <Route
                     path="/constructorpractice/profile/"
                     element={
                         <Modal>
                             <PageDefaultProfile />
+                        </Modal>
+                    }
+                />
+                                <Route
+                    path="/constructorpractice/text/"
+                    element={
+                        <Modal>
+                            <PageTextEdit />
                         </Modal>
                     }
                 />
